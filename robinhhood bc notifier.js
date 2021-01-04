@@ -22,9 +22,9 @@
                 function playSound(type) {
                     var mySound
                     if (type === "good") {
-                        mySound = new Audio("https://soundsnap-prod.nyc3.digitaloceanspaces.com/files/audio/7a/transcode/404570-Tennis_Stadium_Cheering_Clapping_-High_Energy_-10_Thousand_People_-Crowd_-Arena_-Sydney_-Australia-03.mp3?response-content-disposition=attachment%3B+filename%3D%22404570-Tennis_Stadium_Cheering_Clapping_-High_Energy_-10_Thousand_People_-Crowd_-Arena_-Sydney_-Australia-03.mp3%22&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AD4PI63EK5AJWZMJZZKH%2F20210103%2Fnyc3%2Fs3%2Faws4_request&X-Amz-Date=20210103T205434Z&X-Amz-SignedHeaders=host&X-Amz-Expires=60&X-Amz-Signature=9f1f95219f926c2db63521194e16f77448e9ae00ecd8dc6d460ac4ee4718f5e0");
+                        mySound = new Audio("https://raw.githubusercontent.com/ShroudKing/External-Resources/main/Good%20Alert.mp3");
                     } else if (type === "bad") {
-                        mySound = new Audio("https://fsb.zobj.net/download/biWoehu3jYCIKOePc1XK0Q-5lqrUfniDUaNRUR0Q5ik4E9zSS5q_OuXsr6GwgDeKlZ47OGgsOCcBtLt55pt1oUkFp5SsCdy9EHQRNTMQ8MGm6FF74XkX5szQuikM/?a=web&c=72&f=imperial_alarm.mp3&special=1609762471-97JDaGUSGEKnrVHyJTkvSgbnhRY5LboygjghG2%2BrtGw%3D");
+                        mySound = new Audio("https://raw.githubusercontent.com/ShroudKing/External-Resources/main/Bad%20Alert.mp3");
                     }
                     mySound.play()
                     return;
