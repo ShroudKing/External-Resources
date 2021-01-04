@@ -30,36 +30,41 @@
                     return;
                 }
 
-                $(".udYkAW2UrhZln2Iv62EYb").on("DOMSubtreeModified", function(){
-                    var number = Number(this.innerHTML.replace(/[^0-9.-]+/g,""));
-                    console.log(number);
-
-                    if (number > (34000).toFixed(2)) {
-                        if (!onCooldown) {
-                            if (attemps < 3) {
-                                attempts++;
-                                playSound("good");
-                                onCooldown = true;
-                                setTimeout(function(){
-                                    onCooldown = false
-                                }, 60000);
+                var checkExist = setInterval(function() {
+                    if ($('.udYkAW2UrhZln2Iv62EYb').length) {
+                        $(".udYkAW2UrhZln2Iv62EYb").on("DOMSubtreeModified", function(){
+                            var number = Number(this.innerHTML.replace(/[^0-9.-]+/g,""));
+                            console.log(number);
+        
+                            if (number > (34000).toFixed(2)) {
+                                if (!onCooldown) {
+                                    if (attemps < 3) {
+                                        attempts++;
+                                        playSound("good");
+                                        onCooldown = true;
+                                        setTimeout(function(){
+                                            onCooldown = false
+                                        }, 60000);
+                                    }
+                                }
+                            } else if (number < (30000).toFixed(2)) {
+                                if (!onCooldown) {
+                                    if (attemps < 3) {
+                                        attempts++;
+                                        playSound("bad");
+                                        onCooldown = true;
+                                        setTimeout(function(){
+                                            onCooldown = false
+                                        }, 60000);
+                                    }
+                                }
+                            } else {
+                                attemps = 0;
                             }
-                        }
-                    } else if (number < (30000).toFixed(2)) {
-                        if (!onCooldown) {
-                            if (attemps < 3) {
-                                attempts++;
-                                playSound("bad");
-                                onCooldown = true;
-                                setTimeout(function(){
-                                    onCooldown = false
-                                }, 60000);
-                            }
-                        }
-                    } else {
-                        attemps = 0;
+                        });
+                       clearInterval(checkExist);
                     }
-                });
+                 }, 100);
             });
         });
     });
