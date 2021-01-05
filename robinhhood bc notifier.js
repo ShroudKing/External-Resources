@@ -17,7 +17,7 @@ $(function() {
             $('.udYkAW2UrhZln2Iv62EYb').on("DOMSubtreeModified", function(){
                 let number = Number(this.innerHTML.replace(/[^0-9.-]+/g,""));
                 console.log(number);
-                if (number > (34000).toFixed(2)) {
+                if (number > (35000).toFixed(2)) {
                     if (!onCooldown) {
                         if (attemps < 3) {
                             attempts++;
