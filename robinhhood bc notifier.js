@@ -1,24 +1,22 @@
 $(function() {
-    var onCooldown = false;
-    var attempts = 0;
+    let onCooldown = false;
+    let attempts = 0;
 
     function playSound(type) {
-        var mySound
-        if (type === "good") {
+        let mySound;
+        if (type === "good")
             mySound = new Audio("https://raw.githubusercontent.com/ShroudKing/External-Resources/main/Good%20Alert.mp3");
-        } else if (type === "bad") {
+        else if (type === "bad")
             mySound = new Audio("https://raw.githubusercontent.com/ShroudKing/External-Resources/main/Bad%20Alert.mp3");
-        }
-        mySound.play()
-        return;
+        mySound.play();
+        return true;
     }
 
-    var checkExist = setInterval(function() {
+    let checkExist = setInterval(function() {
         if ($('.udYkAW2UrhZln2Iv62EYb').length) {
-            $(".udYkAW2UrhZln2Iv62EYb").on("DOMSubtreeModified", function(){
-                var number = Number(this.innerHTML.replace(/[^0-9.-]+/g,""));
+            $('.udYkAW2UrhZln2Iv62EYb').on("DOMSubtreeModified", function(){
+                let number = Number(this.innerHTML.replace(/[^0-9.-]+/g,""));
                 console.log(number);
-
                 if (number > (34000).toFixed(2)) {
                     if (!onCooldown) {
                         if (attemps < 3) {
@@ -27,7 +25,7 @@ $(function() {
                             onCooldown = true;
                             setTimeout(function(){
                                 onCooldown = false
-                            }, 60000);
+                            }, 20000);
                         }
                     }
                 } else if (number < (30000).toFixed(2)) {
@@ -38,12 +36,11 @@ $(function() {
                             onCooldown = true;
                             setTimeout(function(){
                                 onCooldown = false
-                            }, 60000);
+                            }, 20000);
                         }
                     }
-                } else {
+                } else
                     attemps = 0;
-                }
             });
             clearInterval(checkExist);
         }
