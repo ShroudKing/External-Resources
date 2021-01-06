@@ -17,7 +17,7 @@ $(function() {
             $('.udYkAW2UrhZln2Iv62EYb').on("DOMSubtreeModified", function(){
                 let number = Number(this.innerHTML.replace(/[^0-9.-]+/g,""));
                 console.log(number);
-                if (number > (35000).toFixed(2)) {
+                if (number > (40000).toFixed(2)) {
                     if (!onCooldown) {
                         if (attemps < 3) {
                             attempts++;
@@ -25,7 +25,7 @@ $(function() {
                             onCooldown = true;
                             setTimeout(function(){
                                 onCooldown = false
-                            }, 20000);
+                            }, 60000);
                         }
                     }
                 } else if (number < (30000).toFixed(2)) {
@@ -36,7 +36,7 @@ $(function() {
                             onCooldown = true;
                             setTimeout(function(){
                                 onCooldown = false
-                            }, 20000);
+                            }, 60000);
                         }
                     }
                 } else
