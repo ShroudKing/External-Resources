@@ -1,8 +1,8 @@
 $(function() {
     let fetchLink = "https://api.robinhood.com/marketdata/forex/quotes/3d961844-d360-45fc-989b-f6fca761d511/";
     let currentSellPrice = null;
-    let maxThreshold = 40000;
-    let minThreshold = 30000;
+    let maxThreshold = 0;
+    let minThreshold = 0;
     let riseSound = "https://raw.githubusercontent.com/ShroudKing/External-Resources/main/Good%20Alert.mp3";
     let dropSound = "https://raw.githubusercontent.com/ShroudKing/External-Resources/main/Bad%20Alert.mp3";
 
@@ -35,17 +35,18 @@ $(function() {
             "mode": "cors",
             "credentials": "same-origin"
         });
+        
         data = await data.json();
+        
         if (data) {
             let price = data["mark_price"];
             if (price) {
                 if (parseFloat(price)) {
                     price = Math.round(price);
-                    console.log(price);
                     if (currentSellPrice === null) {
                         currentSellPrice = Math.round(price);
-                        maxThreshold = currentSellPrice + 5000;
-                        minThreshold = currentSellPrice - 5000;
+                        maxThreshold = currentSellPrice + 2500;
+                        minThreshold = currentSellPrice - 2500;
                     } else if (price > maxThreshold) {
                         minThreshold, maxThreshold += 1000;
                         playSound("good");
