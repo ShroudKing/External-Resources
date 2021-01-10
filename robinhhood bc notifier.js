@@ -49,10 +49,12 @@ $(function() {
                         maxThreshold = currentSellPrice + 2500;
                         minThreshold = currentSellPrice - 2500;
                     } else if (price > maxThreshold) {
-                        minThreshold, maxThreshold += 1000;
+                        maxThreshold += 1000;
+                        minThreshold += 1000;
                         playSound("good");
                     } else if (price < minThreshold) {
-                        minThreshold, maxThreshold -= 1000;
+                        maxThreshold -= 1000;
+                        minThreshold -= 1000;
                         playSound("bad");
                     }
                 }
