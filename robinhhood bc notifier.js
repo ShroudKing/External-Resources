@@ -21,7 +21,7 @@ $(function() {
             "headers": {
                 "accept": "*/*",
                 "accept-language": "en-US,en;q=0.9",
-                "authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJleHAiOjE2MTAxNDMwMjYsInRva2VuIjoiUDZzdVZCVE82WDZZUlM0TjV6SXMzeGtJU1ZGcFBjIiwidXNlcl9pZCI6IjlmNjgzOTA4LTRjYjktNDMxNi04NWM4LWRlN2IyYWQ0NzJiZiIsImRldmljZV9oYXNoIjoiM2QyMjJmYjEyMTI5NTU4NTg0MjM1ZWNjMWMyZjY3NTciLCJzY29wZSI6ImludGVybmFsIiwiZGN0IjoxNjA5Njk4MzYxLCJ1c2VyX29yaWdpbiI6IlVTIiwib3B0aW9ucyI6ZmFsc2UsImxldmVsMl9hY2Nlc3MiOmZhbHNlfQ.mvhmnjYUegnPET_8JymP14GGNv38_sDjDMjVCx4PfAyOLY1Wze6uII2BGRXTQvd9bnvL6HTgsicOLd2kgSTZzdC6x5ttfftWTw5B2oyWc3TcyOvlmWXlifjpsJY1twttiv4ZYC7r8zkR6Gl-RsuRyUrPJOHJkyG3XzZkaj2Ew_fLY-LWyMIK4IW5IAZ_xm8m_eXp58ZE09vVdpCiB1qpSt7GwYno5v_htTAc2ZB4FQcGpvO8jctaH3oxI6yf9LY0unf37oczZLG8WJj0xEJDzWmIZpIKnqiO6u01qwlFvBH_zLiXBnOV3oFAaWGQ_lkWSI3esMRH6mgPSWy68Wj4JQ",
+                "authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJleHAiOjE2MTA3MzkzMTksInRva2VuIjoieFZZOG1SalFMbFBFcTNCMDI2ajNSMnd5akNmZ0F1IiwidXNlcl9pZCI6IjlmNjgzOTA4LTRjYjktNDMxNi04NWM4LWRlN2IyYWQ0NzJiZiIsImRldmljZV9oYXNoIjoiM2QyMjJmYjEyMTI5NTU4NTg0MjM1ZWNjMWMyZjY3NTciLCJzY29wZSI6IndlYl9saW1pdGVkIiwiZGN0IjoxNjA5Njk4MzYxLCJ1c2VyX29yaWdpbiI6IlVTIiwib3B0aW9ucyI6ZmFsc2UsImxldmVsMl9hY2Nlc3MiOmZhbHNlfQ.RM_gScoDCZpRLthRHuXrBN7nNQJ9J3SAmKa7axlQB_GA4gjd-TXvUhNsRw0Q4-jt-ppg8iq245mth8Tfn1_MgQqNQnVx6HTTISDn16ZKV8I4VvsBKUI_xzhVhS9BIosvOeYFK5zjLmaeMRweE9SCDHVwDBB0LP-A9s1sCGMYdOU88EwJIuz3AUqolbfA1xTNSzHKNaVIHaHJxKccnE3_T7EGcZu6NhBT65L55pW2LpSLR5JqXjfaiypU0LvMiIZYR7ErncNzLRDuwRikR71OuIAHec0D5ngVlmrO8g7-XK_dJqMTOzIuL6xpxYcjW-VqwGcYIn98HlRvj3Q2NsYZjg",
                 "sec-ch-ua": "\"Google Chrome\";v=\"87\", \" Not;A Brand\";v=\"99\", \"Chromium\";v=\"87\"",
                 "sec-ch-ua-mobile": "?0",
                 "sec-fetch-dest": "empty",
@@ -35,6 +35,8 @@ $(function() {
             "mode": "cors",
             "credentials": "same-origin"
         });
+        
+        console.log(data);
         
         data = await data.json();
         
