@@ -1,4 +1,5 @@
 $(function() {
+    let first = true;
     let fetchLink = "https://api.robinhood.com/marketdata/forex/quotes/3d961844-d360-45fc-989b-f6fca761d511/";
     let currentSellPrice = null;
     let maxThreshold = 0;
@@ -56,6 +57,10 @@ $(function() {
                     }
                 }
             }
+        }
+        if (first) {
+            first = false
+            console.log("Notifier Online");
         }
         setTimeout(() => {
             start();
