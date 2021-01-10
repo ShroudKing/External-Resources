@@ -36,8 +36,6 @@ $(function() {
             "credentials": "same-origin"
         });
         
-        console.log(data);
-        
         data = await data.json();
         
         if (data) {
